@@ -1,7 +1,7 @@
 import argparse
 import sys
 
-def read_file(filename="", encoding="ISO-8859-1"):
+def read_file(filename="", encoding="utf-8"):
 	f = open(filename, "r", encoding=encoding)
 	try:
 		for line in f.readlines():
@@ -42,7 +42,7 @@ def main():
 	if args.encoding is not None:
 		encoding = args.encoding
 	else:
-		encoding = "ISO-8859-1"
+		encoding = "utf-8"
 	if (filename is not None) and (keyword is not None):
 		for x in get_data_by_key(filename, keyword, encoding):
 			print(x, end="\n")
