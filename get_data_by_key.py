@@ -13,7 +13,7 @@ def read_file(filename="", encoding="utf-8"):
 
 def get_data_by_key(filename, keyword, encoding=""):
 	for data in read_file(filename, encoding):
-		if keyword in data:
+		if keyword in data[:len(keyword)]:
 			yield data
 
 def main():
